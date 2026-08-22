@@ -3,9 +3,10 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Citizen Dashboard — SwachLens</title>
+<title>Citizen Dashboard — SwachhLens</title>
 <link rel="stylesheet" href="styles.css" />
 <link rel="stylesheet" href="css/app.css" />
+<link rel="stylesheet" href="css/shared.css" />
 <link rel="stylesheet" href="css/i18n.css" />
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
 </head>
@@ -13,12 +14,12 @@
 <header class="app-header">
   <div class="app-nav">
     <a href="user.html" class="logo">
-      <span class="logo-badge">♻️</span><span>SwachLens</span>
+      <span class="logo-badge"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="7" cy="4" r="2"/><path d="M7 6v5"/><path d="M7 11l-2.5 4"/><path d="M7 11l2.5 4"/><path d="M7 8.5l4-2"/><circle cx="12" cy="5" r="0.7" fill="#fff" stroke="none"/><circle cx="13.2" cy="6.5" r="0.5" fill="#fff" stroke="none"/><path d="M14 9h6v11a1.5 1.5 0 0 1-1.5 1.5h-3A1.5 1.5 0 0 1 14 20V9z"/><path d="M13.5 9h7"/><path d="M16 6v3"/></svg></span><span>SwachhLens</span>
     </a>
     <div class="nav-user">
       <div class="nu-wrap" style="text-align:right;">
         <div class="nu-name" id="uName">Citizen</div>
-        <div class="nu-role" id="uRole">👤 Citizen</div>
+        <div class="nu-role" id="uRole">Citizen</div>
       </div>
       <div class="mini-avatar" id="uAvatar" style="background:linear-gradient(135deg,#10b981,#047857);">👤</div>
       <span data-lang-switch></span>
@@ -32,7 +33,7 @@
 <section class="app-hero">
   <div class="wrap">
     <span class="eyebrow"><span class="dot"></span> <span data-i18n="dash.kicker">Citizen Dashboard</span></span>
-    <h1><span data-i18n="dash.hello">Hello,</span> <span class="grad" id="greetName">Citizen</span> 👋</h1>
+    <h1><span data-i18n="dash.hello">Hello,</span> <span class="grad" id="greetName">Citizen</span></h1>
     <p data-i18n="dash.sub">Spotted overflowing bins or illegal dumping? Report it in seconds — or book a pickup for bulky waste. Track it live until the crew clears and verifies it.</p>
     <div class="hero-actions">
       <button class="btn btn-primary" onclick="openSheet('reportSheet')" data-i18n="dash.reportBtn">Report Waste</button>
@@ -237,20 +238,18 @@
 <!-- FAB -->
 
 <!-- ── Footer ── -->
-<footer class="app-footer">
+<footer class="site-footer">
   <div class="wrap">
-    <div class="footer-inner">
-      <div class="footer-brand">
-        <span class="logo-badge">🚮</span>
-        <span style="font-weight:700;font-size:15px;">SwachLens</span>
+    <div class="site-footer__grid">
+      <div class="site-footer__brand">
+        <a href="index.html" class="app-logo app-logo--light"><span class="app-logo__icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"> <!-- Person --> <circle cx="7" cy="4" r="2"/> <path d="M7 6v5"/> <path d="M7 11l-2.5 4"/> <path d="M7 11l2.5 4"/> <path d="M7 8.5l4-2"/> <!-- Garbage particles --> <circle cx="12" cy="5" r="0.7" fill="#fff" stroke="none"/> <circle cx="13.2" cy="6.5" r="0.5" fill="#fff" stroke="none"/> <!-- Dustbin --> <path d="M14 9h6v11a1.5 1.5 0 0 1-1.5 1.5h-3A1.5 1.5 0 0 1 14 20V9z"/> <path d="M13.5 9h7"/> <path d="M16 6v3"/> </svg> </span><span class="app-logo__text">SwachhLens</span></a>
+        <p>AI-powered civic waste reporting and cleanup verification platform helping citizens and municipal teams build cleaner and smarter cities.</p>
       </div>
-      <div class="footer-links">
-        <a href="index.html">Home</a>
-        <a href="admin-login.html">Admin Login</a>
-        <a href="#" onclick="localStorage.clear();window.location.href='login.html';return false;">Switch Account</a>
-      </div>
-      <div class="footer-copy">© 2026 SwachLens · Smart Sanitation · All rights reserved</div>
+      <div><h4>Platform</h4><ul class="site-footer__links"><li><a href="about.html">About SwachhLens</a></li><li><a href="index.html#system">How It Works</a></li><li><a href="api-docs.html">API Docs</a></li><li><a href="blog.html">Blog</a></li></ul></div>
+      <div><h4>Support</h4><ul class="site-footer__links"><li><a href="help.html">Help Desk</a></li><li><a href="faq.html">FAQs</a></li><li><a href="contact.html">Contact Us</a></li></ul></div>
+      <div><h4>Legal</h4><ul class="site-footer__links"><li><a href="terms.html">Terms of Service</a></li><li><a href="privacy.html">Privacy Policy</a></li></ul></div>
     </div>
+    <div class="site-footer__bottom"><span class="site-footer__copy">&copy; 2026 SwachhLens. Built for cleaner and smarter cities.</span></div>
   </div>
 </footer>
 

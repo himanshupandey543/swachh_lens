@@ -1,12 +1,12 @@
 /* =====================================================================
- * SwachLens — thin REST client for the FastAPI backend.
+ * SwachhLens — thin REST client for the FastAPI backend.
  * ---------------------------------------------------------------------
  * Loaded before auth.js / state.js. Every request automatically attaches
  * the session JWT (Authorization: Bearer <token>). On a 401 the session
  * is cleared and the user is sent back to the login page.
  * ===================================================================== */
 (function () {
-  const BASE = (window.SW_CONFIG && window.SW_CONFIG.API_URL) || 'http://localhost:8000/api';
+  const BASE = window.SW_CONFIG.API_URL;
   const SESSION_KEY = 'swachlens.session';
 
   function getToken() {

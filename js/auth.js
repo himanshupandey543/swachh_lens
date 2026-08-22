@@ -1,5 +1,5 @@
 /* =====================================================================
- * SwachLens — Auth module (FastAPI + JWT)
+ * SwachhLens — Auth module (FastAPI + JWT)
  * ---------------------------------------------------------------------
  * Credentials are verified by the backend, which returns a signed JWT.
  * The JWT is kept in localStorage (swachlens.session) and attached to

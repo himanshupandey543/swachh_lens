@@ -1,5 +1,5 @@
 /* =====================================================================
- * SwachLens — User (Citizen) dashboard
+ * SwachhLens — User (Citizen) dashboard
  * Stats banner · Report modal · My Reports tracker · Recycling tips
  * ===================================================================== */
 (function () {
@@ -337,7 +337,7 @@
         {
           headers: {
             'Accept': 'application/json',
-            'User-Agent': 'SwachLens/1.0 (swachlens-app)',
+            'User-Agent': 'SwachhLens/1.0 (swachlens-app)',
           },
         }
       );

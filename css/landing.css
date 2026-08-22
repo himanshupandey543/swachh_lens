@@ -1,5 +1,5 @@
 /* =====================================================================
- * SwachLens — Premium civic-tech landing + auth design system
+ * SwachhLens — Premium civic-tech landing + auth design system
  * ---------------------------------------------------------------------
  * New editorial, municipal-sanitation identity for the public pages
  * (index.html + login.html). The in-app dashboards keep using
@@ -322,12 +322,15 @@
 .lv-logo {
   display: inline-flex; align-items: center; gap: 12px;
   font-weight: 800; font-size: 20px; color: #fff; text-decoration: none; letter-spacing: -.01em;
+  font-family: var(--lv-font-display);
 }
 .lv-logo__mark {
-  width: 42px; height: 42px; border-radius: 13px; display: grid; place-items: center;
-  background: linear-gradient(140deg, var(--lv-green-500), var(--lv-green-800));
-  color: #fff; font-size: 20px; box-shadow: 0 8px 20px color-mix(in srgb, var(--lv-green-600) 40%, transparent);
+  width: 42px; height: 42px; border-radius: 13px; display: inline-grid; place-items: center;
+  background: linear-gradient(140deg, #10b981, #065f46);
+  color: #fff; box-shadow: 0 8px 20px rgba(16,185,129,.40);
+  flex-shrink: 0;
 }
+.lv-logo__mark svg { width: 22px; height: 22px; }
 
 .lv-nav__links { display: flex; align-items: center; gap: 6px; list-style: none; }
 .lv-nav__links a {
@@ -335,14 +338,44 @@
   font-size: 14.5px; font-weight: 600; color: rgba(255,255,255,.75); text-decoration: none;
 }
 .lv-nav__links a:hover { color: #fff; background: rgba(255,255,255,.12); }
-.lv-nav__cta { display: flex; align-items: center; gap: 10px; }
+.lv-nav__cta { display: flex; align-items: center; gap: 6px; }
 
-/* Frosted nav → light ghost buttons; no hover lift or shimmer inside the bar */
-.lv-nav__cta .lv-btn { transition: none; }
-.lv-nav__cta .lv-btn:hover { transform: none; }
+/* All nav CTA items — unified glass style */
+.lv-nav__cta .lv-btn,
+.lv-nav__cta .lang-switch,
+.lv-nav__cta [data-theme-btn] {
+  min-height: 38px; max-height: 38px; padding: 0 16px;
+  border-radius: 10px; font-size: 13.5px; font-weight: 600;
+  display: inline-flex; align-items: center; justify-content: center;
+  background: rgba(255,255,255,.08);
+  border: 1px solid rgba(255,255,255,.18);
+  color: rgba(255,255,255,.85);
+  transition: background .2s, border-color .2s, color .2s;
+}
+.lv-nav__cta .lv-btn:hover,
+.lv-nav__cta [data-theme-btn]:hover {
+  background: rgba(255,255,255,.14);
+  border-color: rgba(255,255,255,.30);
+  color: #fff;
+}
+.lv-nav__cta [data-theme-btn] {
+  width: 38px; padding: 0; font-size: 15px; min-width: 38px;
+}
+
+/* Register stands out with green accent */
+.lv-nav__cta .lv-btn--primary {
+  background: linear-gradient(135deg, #10b981, #059669);
+  border: 1px solid rgba(16,185,129,.5);
+  color: #fff;
+  border-radius: 10px;
+}
+.lv-nav__cta .lv-btn--primary:hover {
+  background: linear-gradient(135deg, #34d399, #10b981);
+  border-color: rgba(16,185,129,.7);
+}
 .lv-nav__cta .lv-btn--primary::after { display: none; }
-.lv-nav__cta .lv-btn--ghost { color: #fff; border-color: rgba(255,255,255,.35); background: transparent; }
-.lv-nav__cta .lv-btn--ghost:hover { color: #000; background: #fff; border-color: #fff; }
+.lv-nav__cta .lv-btn { transition: background .2s, border-color .2s, color .2s; }
+.lv-nav__cta .lv-btn:hover { transform: none; }
 
 .lv-burger {
   display: none; width: 44px; height: 44px; border-radius: 12px; border: 1px solid rgba(255,255,255,.2);

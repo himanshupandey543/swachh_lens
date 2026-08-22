@@ -1,5 +1,5 @@
 /* =====================================================================
- * SwachLens — login page (nested role experience)
+ * SwachhLens — login page (nested role experience)
  * ---------------------------------------------------------------------
  * A progressive role flow: role selector → role deep-dive panel → a
  * contextual Login/Register form that inherits the selected role's

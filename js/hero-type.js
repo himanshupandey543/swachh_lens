@@ -1,5 +1,5 @@
 /* =========================================================
- * SwachLens — Static hero headline
+ * SwachhLens — Static hero headline
  * -----------------------------------------------------------------
  * Renders the full hero headline instantly (no typewriter loop).
  * The trailing accent (default "report.") is rendered into its own

@@ -1,5 +1,5 @@
 /* =====================================================================
- * SwachLens — app styles for /login, /user, /employee
+ * SwachhLens — app styles for /login, /user, /employee
  * Design language matches index.html (same tokens from styles.css).
  * ===================================================================== */
 
@@ -19,7 +19,12 @@
   display: flex; align-items: center; justify-content: space-between;
   padding: 12px 24px; gap: 12px;
 }
-.app-nav .logo { text-decoration: none; }
+.app-nav .logo {
+  display: inline-flex; align-items: center; gap: 12px;
+  font-weight: 800; font-size: 20px; color: #fff; text-decoration: none;
+  letter-spacing: -.01em;
+  font-family: "Fraunces", Georgia, "Times New Roman", serif;
+}
 .role-chip {
   display: inline-flex; align-items: center; gap: 8px;
   padding: 7px 14px; border-radius: 999px; font-size: 13px; font-weight: 800;

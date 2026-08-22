@@ -1,5 +1,5 @@
 /* =====================================================================
- * SwachLens — centralized state (FastAPI + SQLite backed)
+ * SwachhLens — centralized state (FastAPI + SQLite backed)
  * ---------------------------------------------------------------------
  * The backend is now the single source of truth. The Store keeps an
  * in-memory mirror of the reports list so the dashboards keep their

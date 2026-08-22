@@ -1,13 +1,20 @@
-# Netlify Configuration for SwachLens Frontend
+# Netlify Configuration for SwachhLens Frontend
+# This is a multi-page static HTML/CSS/JS application.
+# The backend (FastAPI) is deployed separately on Railway.
 
 [build]
   publish = "."
   command = "echo 'Static site - no build needed'"
 
-# SPA-style routing: serve .html files for clean URLs
+# Clean URL redirects (optional convenience — .html extensions still work)
 [[redirects]]
   from = "/login"
   to = "/login.html"
+  status = 200
+
+[[redirects]]
+  from = "/register"
+  to = "/register.html"
   status = 200
 
 [[redirects]]
@@ -16,20 +23,52 @@
   status = 200
 
 [[redirects]]
-  from = "/employee"
-  to = "/employee.html"
+  from = "/about"
+  to = "/about.html"
   status = 200
 
 [[redirects]]
-  from = "/register"
-  to = "/register.html"
+  from = "/contact"
+  to = "/contact.html"
   status = 200
 
-# Catch-all: serve index.html for other routes
 [[redirects]]
-  from = "/*"
-  to = "/index.html"
+  from = "/faq"
+  to = "/faq.html"
   status = 200
+
+[[redirects]]
+  from = "/terms"
+  to = "/terms.html"
+  status = 200
+
+[[redirects]]
+  from = "/privacy"
+  to = "/privacy.html"
+  status = 200
+
+[[redirects]]
+  from = "/blog"
+  to = "/blog.html"
+  status = 200
+
+[[redirects]]
+  from = "/help"
+  to = "/help.html"
+  status = 200
+
+[[redirects]]
+  from = "/api-docs"
+  to = "/api-docs.html"
+  status = 200
+
+# Proxy API requests to the Railway backend
+# Update this URL after deploying the backend to Railway
+[[redirects]]
+  from = "/api/*"
+  to = "https://swachhlens-production-b927.up.railway.app/api/:splat"
+  status = 200
+  force = true
 
 # Security headers
 [[headers]]

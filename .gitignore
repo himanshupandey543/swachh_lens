@@ -1,0 +1,47 @@
+# Dependencies
+node_modules/
+venv/
+__pycache__/
+*.pyc
+
+# Environment files
+.env
+.env.local
+.env.production
+.env.*
+
+# Database (local copies)
+backend/data/*.db
+*.sqlite3
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logs
+*.log
+logs/
+
+# Build artifacts
+dist/
+build/
+.cache/
+
+# Netlify
+.netlify/
+
+# Freebuff session data
+.freebuff/
+
+# Temporary files
+tmp/
+temp/
+*.tmp

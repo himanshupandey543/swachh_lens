@@ -1,5 +1,5 @@
 /* =====================================================================
- * SwachLens — landing page (index.html)
+ * SwachhLens — landing page (index.html)
  * ---------------------------------------------------------------------
  * Premium civic-tech landing. Wires navigation, scroll reveals,
  * staggered children, split-line headline reveal, marquee, animated

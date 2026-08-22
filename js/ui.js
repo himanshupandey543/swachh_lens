@@ -1,5 +1,5 @@
 /* =====================================================================
- * SwachLens — shared UI helpers (theme, toast, reveal, counters, modal)
+ * SwachhLens — shared UI helpers (theme, toast, reveal, counters, modal)
  * ===================================================================== */
 
 /* ---------- Theme ---------- */

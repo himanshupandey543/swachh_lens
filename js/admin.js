@@ -47,7 +47,7 @@
 
   // ── Auth fetch ──────────────────────────────────────────────────────────
   function authFetch(method, path, body) {
-    const BASE = (window.SW_CONFIG && window.SW_CONFIG.API_URL) || 'http://localhost:8000/api';
+    const BASE = window.SW_CONFIG.API_URL;
     return fetch(BASE + path, {
       method,
       headers: { 'Content-Type': 'application/json', Authorization: 'Bearer ' + getToken() },

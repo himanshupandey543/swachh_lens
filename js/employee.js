@@ -1,5 +1,5 @@
 /* =====================================================================
- * SwachLens — Employee dashboard
+ * SwachhLens — Employee dashboard
  * Group-assigned task list · Accept/reject assigned · Mark collected · Verify
  * ===================================================================== */
 (function () {
