@@ -1,1 +1,0 @@
-"""SwachLens FastAPI backend package."""
