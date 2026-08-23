@@ -13,26 +13,15 @@ from .database import init_db
 from .routes import analyze, admin_tasks, auth, community, constants, gis, reports
 
 
-# ---------------------------------------------------------
-# Create FastAPI application FIRST
-# ---------------------------------------------------------
-app = FastAPI(
-    title="SwachLens API",
-    version="1.0.0",
-)
+app = FastAPI(title="SwachLens API", version="1.0.0")
 
 
-# ---------------------------------------------------------
-# CORS
-# ---------------------------------------------------------
 app.add_middleware(
     CORSMiddleware,
     allow_origins=config.FRONTEND_ORIGINS + ["*"],
     allow_methods=["*"],
     allow_headers=["*"],
 )
-
-
 # ---------------------------------------------------------
 # Health check for Railway
 # ---------------------------------------------------------
