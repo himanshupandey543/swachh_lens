@@ -1,4 +1,7 @@
-"""SwachLens FastAPI application."""
+"""SwachLens FastAPI application.
+
+Serves the REST API under /api/... and the static frontend.
+"""
 
 from __future__ import annotations
 
@@ -13,29 +16,32 @@ from .database import init_db
 from .routes import analyze, admin_tasks, auth, community, constants, gis, reports
 
 
-app = FastAPI(title="SwachLens API", version="1.0.0")
+# Create application first
+app = FastAPI(
+    title="SwachLens API",
+    version="1.0.0",
+)
 
 
+# CORS
 app.add_middleware(
     CORSMiddleware,
     allow_origins=config.FRONTEND_ORIGINS + ["*"],
     allow_methods=["*"],
     allow_headers=["*"],
 )
-# ---------------------------------------------------------
-# Health check for Railway
-# ---------------------------------------------------------
-@app.get("/health", tags=["Health"])
-def health_check():
+
+
+# Railway health check
+@app.get("/health")
+def health():
     return {
         "status": "ok",
         "service": "SwachLens API"
     }
 
 
-# ---------------------------------------------------------
 # API routes
-# ---------------------------------------------------------
 app.include_router(auth.router, prefix="/api")
 app.include_router(reports.router, prefix="/api")
 app.include_router(constants.router, prefix="/api")
@@ -45,17 +51,11 @@ app.include_router(community.router, prefix="/api")
 app.include_router(admin_tasks.router, prefix="/api")
 
 
-# ---------------------------------------------------------
-# Database initialization
-# ---------------------------------------------------------
 @app.on_event("startup")
 def _on_startup() -> None:
     init_db()
 
 
-# ---------------------------------------------------------
-# Static frontend
-# ---------------------------------------------------------
 def _resolve_static(full_path: str) -> Path:
     root = config.STATIC_DIR.resolve()
     candidate = (root / full_path).resolve()
@@ -63,7 +63,7 @@ def _resolve_static(full_path: str) -> Path:
     if candidate != root and root not in candidate.parents:
         raise HTTPException(
             status_code=403,
-            detail="Forbidden",
+            detail="Forbidden"
         )
 
     if candidate.is_dir():
@@ -72,7 +72,8 @@ def _resolve_static(full_path: str) -> Path:
     if candidate.is_file():
         return candidate
 
-    # Support extensionless routes such as /login -> login.html
+    # Extensionless route:
+    # /login -> login.html
     if not Path(full_path).suffix:
         html = root / (full_path + ".html")
 
@@ -81,7 +82,7 @@ def _resolve_static(full_path: str) -> Path:
 
     raise HTTPException(
         status_code=404,
-        detail="Not found",
+        detail="Not found"
     )
 
 
