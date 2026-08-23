@@ -4,7 +4,7 @@
     "builder": "NIXPACKS"
   },
   "deploy": {
-    "startCommand": "python cleanup_demo.py && python run.py",
+    "startCommand": "uvicorn app.main:app --host 0.0.0.0 --port $PORT",
     "healthcheckPath": "/docs",
     "healthcheckTimeout": 300,
     "restartPolicyType": "ON_FAILURE",
