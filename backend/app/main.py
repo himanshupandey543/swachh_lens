@@ -1,12 +1,3 @@
-"""SwachLens FastAPI application.
-
-Serves the REST API under /api/... and the static frontend.
-"""
-
-from __future__ import annotations
-
-from pathlib import Path
-
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import FileResponse
@@ -15,21 +6,15 @@ from . import config
 from .database import init_db
 from .routes import analyze, admin_tasks, auth, community, constants, gis, reports
 
+app = FastAPI(title="SwachLens API", version="1.0.0")
 
-# Create application first
-app = FastAPI(
-    title="SwachLens API",
-    version="1.0.0",
-)
-
-
-# CORS
 app.add_middleware(
     CORSMiddleware,
     allow_origins=config.FRONTEND_ORIGINS + ["*"],
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
 
 
 # Railway health check
