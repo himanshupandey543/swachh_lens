@@ -20,14 +20,21 @@ from .routes import analyze, auth, community, constants, gis, reports
 
 app = FastAPI(title="SwachLens API", version="1.0.0")
 
-# Dev-friendly CORS: we authenticate with Bearer tokens (not cookies), so a
-# permissive allowlist is safe. Tighten for production.
 app.add_middleware(
     CORSMiddleware,
     allow_origins=config.FRONTEND_ORIGINS + ["*"],
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+@app.get("/health")
+def health():
+    return {
+        "status": "ok",
+        "service": "SwachLens API"
+    }
+
+app.include_router(auth.router, prefix="/api")
 
 # API routes (must come before the static catch-all).
 app.include_router(auth.router, prefix="/api")
