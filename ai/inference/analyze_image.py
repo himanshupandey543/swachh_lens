@@ -3367,20 +3367,20 @@ def _waste_result(
 ):
     """Build the final WASTE response from confirmed YOLO detections."""
     type_mapping = {
-        "hazardous-waste": "Hazardous",
-        "medical-waste": "Hazardous",
-        "organic-waste": "Organic",
+    "hazardous-waste": "Hazardous",
+    "medical-waste": "Hazardous",
+    "organic-waste": "Organic",
 
-        "recyclable-waste-cardboard": "Plastic",
-        "recyclable-waste-clothes": "Plastic",
-        "recyclable-waste-glass": "Plastic",
-        "recyclable-waste-metal": "Plastic",
-        "recyclable-waste-nylonbag": "Plastic",
-        "recyclable-waste-paper": "Plastic",
-        "recyclable-waste-paperbag": "Plastic",
-        "recyclable-waste-plastic": "Plastic",
-        "recyclable-waste-shoe": "Plastic",
-    }
+    "recyclable-waste-cardboard": "Cardboard",
+    "recyclable-waste-clothes": "Clothes",
+    "recyclable-waste-glass": "Glass",
+    "recyclable-waste-metal": "Metal",
+    "recyclable-waste-nylonbag": "Plastic",
+    "recyclable-waste-paper": "Paper",
+    "recyclable-waste-paperbag": "Paper",
+    "recyclable-waste-plastic": "Plastic",
+    "recyclable-waste-shoe": "Shoes",
+}
 
     type_counts = {}
 
@@ -3389,7 +3389,7 @@ def _waste_result(
 
         app_type = type_mapping.get(
             model_type,
-            "Plastic",
+            "Unknown",
         )
 
         type_counts[app_type] = (
