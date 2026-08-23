@@ -18,6 +18,18 @@ from . import config
 from .database import init_db
 from .routes import analyze, admin_tasks, auth, community, constants, gis, reports
 
+from fastapi.middleware.cors import CORSMiddleware
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=[
+        "https://YOUR-NETLIFY-SITE.netlify.app"
+    ],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
 app = FastAPI(title="SwachLens API", version="1.0.0")
 
 # Dev-friendly CORS: we authenticate with Bearer tokens (not cookies), so a
