@@ -10,7 +10,7 @@
  * edit the PRODUCTION_API_URL below after deploying the backend.
  * ===================================================================== */
 (function () {
-  var PRODUCTION_API_URL = 'https://swachhlens-production-b927.up.railway.app/api';
+  var PRODUCTION_API_URL = 'swachhlens-production.up.railway.app/api';
 
   window.SW_CONFIG = window.SW_CONFIG || {};
   window.SW_CONFIG.APP_NAME = 'SwachhLens';
